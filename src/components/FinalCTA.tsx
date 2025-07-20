@@ -52,40 +52,21 @@ const FinalCTA: React.FC = () => {
 
           {/* Main CTA */}
           <div className="space-y-6">
-            <Link
-              to="/signup"
+            <a
+              href="https://forms.gle/VpjWXet6adTKfDwY7"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center bg-white text-teal-900 px-12 py-5 rounded-xl font-bold text-xl hover:bg-teal-50 transform hover:scale-105 transition-all duration-200 shadow-2xl group"
             >
               Join the Beta
               <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            </a>
             
             <p className="text-teal-200 text-lg">
-              <span className="font-semibold">Free first question</span> • No credit card required • Setup in 2 minutes
+              <span className="font-semibold"> • Free first question    • No credit card required    • Setup in 5 minutes</span>
             </p>
           </div>
 
-          {/* Social Proof */}
-          <div className="mt-16 pt-12 border-t border-white/20">
-            <div className="grid md:grid-cols-4 gap-8 text-center">
-              <div>
-                <div className="text-3xl font-bold text-white mb-1">500+</div>
-                <div className="text-teal-200 text-sm">Businesses Served</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-white mb-1">10K+</div>
-                <div className="text-teal-200 text-sm">Survey Responses</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-white mb-1">2hrs</div>
-                <div className="text-teal-200 text-sm">Average Response</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-white mb-1">98%</div>
-                <div className="text-teal-200 text-sm">Satisfaction Rate</div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

@@ -54,12 +54,14 @@ const Header: React.FC = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Link
-              to="/signup"
+            <a
+              href="https://forms.gle/VpjWXet6adTKfDwY7"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-gradient-to-r from-teal-500 to-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-teal-600 hover:to-emerald-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
             >
               Join Beta
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -91,13 +93,15 @@ const Header: React.FC = () => {
                 </a>
               ))}
               <div className="px-4 pt-2">
-                <Link
-                  to="/signup"
+                <a
+                  href="https://forms.gle/VpjWXet6adTKfDwY7"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block w-full bg-gradient-to-r from-teal-500 to-emerald-600 text-white px-6 py-3 rounded-lg font-semibold text-center"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Join Beta
-                </Link>
+                </a>
               </div>
             </nav>
           </div>

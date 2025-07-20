@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { BarChart3, ArrowLeft, CheckCircle, X, Users, TrendingUp, Zap, Star, Clock, Target, Sparkles, Play } from 'lucide-react';
-import { useAuth } from '../../contexts/AuthContext';
 
 const SignupPage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -17,8 +16,6 @@ const SignupPage: React.FC = () => {
   const [currentDemo, setCurrentDemo] = useState(0);
   const [liveCount, setLiveCount] = useState(89);
   const [successCount, setSuccessCount] = useState(500);
-  
-  const { signUp, createProfile } = useAuth();
 
   const industries = [
     'Technology', 'Healthcare', 'Finance', 'Retail', 'Education', 
@@ -57,35 +54,14 @@ const SignupPage: React.FC = () => {
     setError('');
 
     try {
-      // Generate a temporary password for the user
-      const tempPassword = Math.random().toString(36).slice(-8) + 'A1!';
-      
-      const { user, session, error: signUpError } = await signUp(formData.email, tempPassword);
-      
-      if (signUpError) {
-        throw signUpError;
-      }
-
-      // Check if we have a user (either immediately or pending email confirmation)
-      if (user) {
-        // Create profile with all the data using the correct user ID
-        const profileData = {
-          id: user.id, // Use the user ID from signup
-          email: user.email!,
-          full_name: formData.fullName,
-          company_name: formData.companyName || undefined,
-          phone: formData.phone || undefined,
-          industry: formData.industry || undefined
-        };
-        
-        await createProfile(profileData);
-      }
+      // Simulate form submission
+      await new Promise(resolve => setTimeout(resolve, 1000));
       
       // Show success popup
       setShowSuccessPopup(true);
     } catch (err: any) {
       console.error('Signup error:', err);
-      setError(err.message || 'Failed to join beta. Please try again.');
+      setError('Failed to join beta. Please try again.');
     } finally {
       setLoading(false);
     }
